@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>沙海遗城 · Sands of the Absent</title><link rel="stylesheet" href="src/style.css"><script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js","three/addons/":"./node_modules/three/examples/jsm/"}}</script></head>
+<body>
+<canvas id="scene" aria-label="沙海遗城，可探索的三维沙漠场景"></canvas>
+<div id="loading"><span class="eyebrow">SANDS OF THE ABSENT</span><h1>沙海遗城</h1><div class="loading-line"><i></i></div><p id="load-text">风正穿过旧日的石门。</p></div>
+<main id="hud" class="hidden">
+ <header><div class="wordmark"><span class="mark">◇</span><span>沙海遗城<small>SANDS OF THE ABSENT</small></span></div><div class="header-right"><span id="region">01 / 风蚀神庙</span><button id="map-button" aria-label="打开地图">地图 <kbd>M</kbd></button><button id="photo-button" aria-label="切换摄影模式">留影 <kbd>P</kbd></button></div></header>
+ <div id="compass"><i></i><b id="bearing">北</b><i></i></div>
+ <div id="reticle"></div>
+ <section id="intro"><span class="eyebrow">A LIGHT THROUGH THE SANDS</span><h1>借一盏灯</h1><p>带上一盏灯，唤醒三处遗迹。<br>把灯放进聚光座，转动光镜，让光照到晶体。</p><button id="enter">踏入沙海 <span>↗</span></button><small>WASD 靠近地上的暖光 · 出现提示后按 E · 按住画面拖动环顾</small></section>
+ <div id="discovery" class="hidden"><span id="discovery-kicker">遗迹苏醒</span><h2 id="discovery-name"></h2><p id="discovery-desc"></p></div>
+ <section id="objective"><span id="chapter">第一章 · 风蚀神庙</span><p id="objective-text">提起地上的灯。</p><small id="objective-detail" class="hidden"></small><div id="charge-track"><i id="charge-fill"></i></div></section>
+ <div id="interact" class="hidden"><button id="interact-button"><kbd>E</kbd><span id="interact-label">提起提灯</span></button></div>
+ <footer><div id="controls"><kbd>W A S D</kbd> 行走 <span>·</span> <kbd>Shift</kbd> 奔跑 <span>·</span> <kbd>E</kbd> 互动 <span>·</span> 拖动环顾</div><div class="progress"><span id="visited">0 / 3</span><small>遗迹苏醒</small></div></footer>
+</main>
+<aside id="map" class="hidden" aria-label="探索地图"><button class="close" id="close-map" aria-label="关闭地图">×</button><span class="eyebrow">THE LOST VALLEY</span><h2>遗城行迹</h2><p>三个地方，一段相连的旅途。</p><div class="map-drawing"><svg viewBox="0 0 380 250"><path class="contour" d="M5 31Q90 65 74 0M0 100Q125 110 88 0M0 155Q130 143 145 10M5 214Q160 169 207 22M370 20Q252 16 293 138Q350 248 225 246M380 66Q293 28 315 136Q380 237 297 244"/><path class="route" d="M180 221Q178 150 95 124Q155 123 184 65Q224 113 291 167Q231 172 180 221"/><circle cx="95" cy="124" r="5"/><circle cx="184" cy="65" r="5"/><circle cx="291" cy="167" r="5"/><text x="49" y="106">风蚀神庙</text><text x="150" y="44">碑下旧城</text><text x="261" y="192">峡谷绿洲</text><path d="M176 227l4-10 4 10Z"/></svg></div><div class="destinations"><button data-view="temple"><span>01</span> 风蚀神庙 <i>↗</i></button><button data-view="city"><span>02</span> 碑下旧城 <i>↗</i></button><button data-view="oasis"><span>03</span> 峡谷绿洲 <i>↗</i></button><button data-view="hero"><span>↶</span> 回到来时的路 <i>↗</i></button></div><small>点击地点可快速抵达；也可以沿沙路步行探索。</small><div class="map-controls"><span>操作</span><p><kbd>W A S D</kbd> 行走　<kbd>Shift</kbd> 奔跑　<kbd>Space</kbd> 跳跃<br>按住画面拖动环顾 · 靠近后 <kbd>E</kbd> 互动</p></div></aside>
+<div id="dialog" class="hidden"><span id="dialog-title">守灯人</span><p id="dialog-text"></p><button id="dialog-close"><span id="dialog-close-label">记住了</span> <kbd>E</kbd></button></div>
+<div id="photo-hint" class="hidden">摄影模式　·　拖动环顾　·　P 返回　·　C 保存画面</div><div id="toast"></div><script type="module" src="src/game-main.js"></script>
+</body></html>
